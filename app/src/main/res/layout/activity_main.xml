@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="easy.pack.app.MainActivity">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <Button
+            android:id="@+id/get1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get1"
+            android:onClick="getSingle"/>
+        <Button
+            android:id="@+id/get2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get2"
+            android:onClick="showSt"/>
+        <Button
+            android:id="@+id/get3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get3"
+            android:onClick="check"/>
+        <Button
+            android:id="@+id/get4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start activity 4 result"
+            android:onClick="safr"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>
