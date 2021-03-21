@@ -3,8 +3,6 @@ package easy.fp;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import androidx.annotation.NonNull;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -197,7 +195,6 @@ class SimplePathStrategy implements PathStrategy {
         return key;
     }
 
-    @NonNull
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

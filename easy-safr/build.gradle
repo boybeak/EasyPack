@@ -32,8 +32,8 @@ android {
 }
 
 dependencies {
-
-    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation 'androidx.fragment:fragment:1.3.0'
+    implementation "androidx.annotation:annotation:1.1.0"
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -56,7 +56,7 @@ dokka {
 }
 
 ext {
-    artifactId = "i-router" // module name of the library
+    artifactId = "easy-safr" // module name of the library
 }
 apply from: '../deploy.gradle'
 
@@ -65,4 +65,10 @@ afterEvaluate {
     generateDebugBuildConfig.enabled = false
     generateReleaseResValues.enabled = false
     generateDebugResValues.enabled = false
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
 }
