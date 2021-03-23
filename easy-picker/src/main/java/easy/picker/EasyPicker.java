@@ -47,6 +47,7 @@ public class EasyPicker {
         return sConfig != null;
     }
 
-    private EasyPicker(){}
+    private EasyPicker(){
+    }
 
 }

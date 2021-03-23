@@ -1,18 +1,18 @@
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'
 apply from: '../bintray-user.gradle'
 
 ext {
     // This configuration will result in:
     // compile '<groupId>:<artifactId>:<libVersion>'
-    groupId = 'easy.pack' // package name of the project
+    groupId = 'com.github.boybeak' // package name of the project
     libVersion = "0.0.1"
 }
 
 version = libVersion
 group = groupId
 //take a look at https://github.com/bintray/gradle-bintray-plugin#buildgradle
-bintray {
+/*bintray {
     user = 'boybeak' // Your bintray User
     key = bintray_key // Defined in keystore.gradle file
     configurations = ['archives']
@@ -28,8 +28,8 @@ bintray {
             name = version
         }
     }
-}
-install {
+}*/
+/*install {
     repositories.mavenInstaller {
         pom.project {
             packaging 'aar'
@@ -39,7 +39,7 @@ install {
             name artifactId // pom.project.name must be same as bintray.pkg.name
         }
     }
-}
+}*/
 
 //just copy paste the lines below
 if (project.hasProperty("kotlin")) { //Kotlin libraries

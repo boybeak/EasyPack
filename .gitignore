@@ -1,3 +1,4 @@
+mavencentral.gpg
 bintray-user.gradle
 *.iml
 .gradle

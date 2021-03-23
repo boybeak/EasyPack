@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.library'
-    id 'com.jfrog.bintray'
-    id 'org.jetbrains.dokka'
+//    id 'com.jfrog.bintray'
+//    id 'org.jetbrains.dokka'
     id 'maven-publish'
 }
 
@@ -35,44 +35,25 @@ dependencies {
 
     implementation "androidx.appcompat:appcompat:$appcompat"
 
-    implementation project(':easy-fp')
-    implementation project(':easy-safr')
+    api 'com.github.boybeak:easy-safr:0.01'
+    api 'com.github.boybeak:easy-fp:0.01'
+
+//    implementation project(':easy-fp')
+//    implementation project(':easy-safr')
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 
-dokka {
-    outputFormat = 'html'
-    outputDirectory = '$buildDir/javadoc'
-
-    configuration {
-        externalDocumentationLink {
-            noJdkLink = true
-            noStdlibLink = true
-            noAndroidSdkLink = true
-
-            url = new URL("https://whatever")
-            packageListUrl = new URL("file:///${rootDir}/package-list")
-        }
-    }
-}
-
 ext {
-    artifactId = "easy-picker" // module name of the library
+    PUBLISH_ARTIFACT_ID = "easy-picker"
 }
-apply from: '../deploy.gradle'
+apply from: '../publish.gradle'
 
 afterEvaluate {
     generateReleaseBuildConfig.enabled = false
     generateDebugBuildConfig.enabled = false
     generateReleaseResValues.enabled = false
     generateDebugResValues.enabled = false
-}
-
-tasks.withType(Javadoc) {
-    options.addStringOption('Xdoclint:none', '-quiet')
-    options.addStringOption('encoding', 'UTF-8')
-    options.addStringOption('charSet', 'UTF-8')
 }
