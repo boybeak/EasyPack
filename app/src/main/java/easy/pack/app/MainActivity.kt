@@ -17,6 +17,7 @@ import com.github.boybeak.easypermission.EasyPermission
 import easy.fp.EasyFP
 import easy.picker.Config
 import easy.picker.EasyPicker
+import easy.picker.type.ImageType
 import easy.safr.EasySAFR
 import easy.safr.OnResultAdapter
 
@@ -65,12 +66,17 @@ class MainActivity : AppCompatActivity() {
         EasyPicker.captureAudio().capture(this) { uri, file ->
             Log.v(TAG, "uri=$uri file=$file")
         }
-//        EasyPicker.fromGallery(ImageType.any()).multipleGet(this) { uris, files ->
-//            Log.v(TAG, "multipleGet ${uris.size} ${files.size}")
-//        }
+        EasyPicker.fromGallery(ImageType.any()).multipleGet(this) { uris, files ->
+            Log.v(TAG, "multipleGet ${uris.size} ${files.size}")
+        }
+        EasyPicker.captureImage()
+            .capture(this) { uri, file ->
+
+            }
     }
 
     fun showSt(v: View) {
+        EasyFP.withDefault(this)
 
     }
 
@@ -111,7 +117,8 @@ class MainActivity : AppCompatActivity() {
                 override fun onCancel(id: String) {
                     Toast.makeText(this@MainActivity, "onCancel", Toast.LENGTH_SHORT).show()
                 }
-            })
+            }
+        )
     }
 
 }

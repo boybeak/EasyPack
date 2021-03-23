@@ -6,8 +6,4 @@
         name="external_cache_path"
         path="images"
         />
-    <!--<external-cache-path
-        name="external_cache_path"
-        path="images_x"
-        />-->
 </paths>
