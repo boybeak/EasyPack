@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
 import com.github.boybeak.easypermission.Callback
 import com.github.boybeak.easypermission.EasyPermission
@@ -20,6 +21,7 @@ import easy.picker.EasyPicker
 import easy.picker.type.ImageType
 import easy.safr.EasySAFR
 import easy.safr.OnResultAdapter
+import java.lang.reflect.Proxy
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +45,8 @@ class MainActivity : AppCompatActivity() {
                 override fun onDenied(permission: String, requestCode: Int, neverAsk: Boolean) {
                 }
             })
+
+        Proxy.newProxyInstance(classLoader, arrayOf(ActivityCompat.OnRequestPermissionsResultCallback::class.java), )
 
     }
 
@@ -73,6 +77,7 @@ class MainActivity : AppCompatActivity() {
             .capture(this) { uri, file ->
 
             }
+
     }
 
     fun showSt(v: View) {
