@@ -3,6 +3,7 @@ package easy.pack.app
 import android.Manifest
 import android.app.ActivityManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity

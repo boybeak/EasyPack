@@ -1,4 +1,4 @@
-# EasyPack ![](https://img.shields.io/badge/EasyPack-v0.02-blue)
+# EasyPack ![](https://img.shields.io/badge/EasyPack-v0.1.3-blue)
 ## Install
 
 In your root build.gradle
